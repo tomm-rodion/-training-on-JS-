@@ -259,18 +259,58 @@ console.log(cars);
 
 // console.log(getAvalebleCarNames(cars));
 
-const getSortedCarOnSale = (cars) => {
-  let num = 0;
-  return cars
-    .filter(({ onSale }) => onSale)
-    .sort((a, b) => a.price - b.price)
-    .map((car) => {
-      return `Car#${(num += 1)}
-       Make: ${car.make},
-       Model: ${car.model},
-       Amount: ${car.amount},
-       Price: ${car.price}`;
-    });
+// reduce
+// const getSortedCarOnSale = (cars) => {
+//   let num = 0;
+//   return cars
+//     .filter(({ onSale }) => onSale)
+//     .sort((a, b) => a.price - b.price)
+//     .map((car) => {
+//       return `Car#${(num += 1)}
+//        Make: ${car.make},
+//        Model: ${car.model},
+//        Amount: ${car.amount},
+//        Price: ${car.price}`;
+//     });
+// };
+
+// const getSortCarOnSale = (cars) => {
+//   const result = cars
+//     .filter((car) => car.onSale)
+//     .sort((a, b) => a.price - b.price);
+//   return result.reduce(
+//     (acc, car, indexCar) => {
+//       return (
+//         acc +
+//         `${indexCar + 1},
+//       Make: ${car.make},
+//       Price: ${car.price}`
+//       );
+//     },
+//     result.length ? `Кількість автомобілів ${result.length}` : "немає🙄"
+//   );
+// };
+
+// console.table(getSortedCarOnSale(cars));
+// console.log(getSortCarOnSale(cars));
+
+//reduce
+
+const str = "dgjnclshdyeofjkdlszxcznxvbetrykdhjdhfkjdrweruponaqoweinxcbfgdhskl";
+const str1 =
+  "dfjhgqwertyuiopasdfghjklzxcvbnmnbvcxzasdfghjqwertyuiolasdghjkcvbnm";
+
+const searchLetter = (string) => {
+  const arrTetter = string.split("");
+  return arrTetter.reduce((acc, letter) => {
+    if (acc.hasOwnProperty(letter)) {
+      acc[letter] += 1;
+    } else {
+      acc[letter] = 1;
+    }
+    return acc;
+  }, {});
+  return result;
 };
 
-console.table(getSortedCarOnSale(cars));
+console.log(searchLetter(str));
