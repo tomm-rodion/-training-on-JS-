@@ -300,17 +300,52 @@ const str = "dgjnclshdyeofjkdlszxcznxvbetrykdhjdhfkjdrweruponaqoweinxcbfgdhskl";
 const str1 =
   "dfjhgqwertyuiopasdfghjklzxcvbnmnbvcxzasdfghjqwertyuiolasdghjkcvbnm";
 
-const searchLetter = (string) => {
-  const arrTetter = string.split("");
-  return arrTetter.reduce((acc, letter) => {
-    if (acc.hasOwnProperty(letter)) {
-      acc[letter] += 1;
+//#1
+// const searchLetter = (string) => {
+//   const arrTetter = string.split("");
+//   return arrTetter.reduce((acc, letter) => {
+//     if (acc.hasOwnProperty(letter)) {
+//       acc[letter] += 1;
+//     } else {
+//       acc[letter] = 1;
+//     }
+//     return acc;
+//   }, {});
+//   return result;
+// };
+
+// console.log(searchLetter(str));
+
+//#2
+// const searchLetters = (string) => {
+//   const arrTetter = string.split("");
+//   return arrTetter.reduce((acc, letter) => {
+//     //..key...in..Object
+//     if (letter in acc) {
+//       acc[letter] += 1;
+//     } else {
+//       acc[letter] = 1;
+//     }
+//     return acc;
+//   }, {});
+//   return result;
+// };
+
+// console.log(searchLetters(str1));
+
+//#3
+
+const searchLettersinForOF = (string) => {
+  const arrLetters = string.split("");
+  const newObjLetters = {};
+  for (const letter of arrLetters) {
+    if (newObjLetters.hasOwnProperty(letter)) {
+      newObjLetters[letter] += 1;
     } else {
-      acc[letter] = 1;
+      newObjLetters[letter] = 1;
     }
-    return acc;
-  }, {});
-  return result;
+  }
+  return newObjLetters;
 };
 
-console.log(searchLetter(str));
+console.log(searchLettersinForOF(str1));
