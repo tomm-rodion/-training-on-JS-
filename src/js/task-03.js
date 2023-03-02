@@ -335,17 +335,17 @@ const str1 =
 
 //#3
 
-const searchLettersinForOF = (string) => {
-  const arrLetters = string.split("");
-  const newObjLetters = {};
-  for (const letter of arrLetters) {
-    if (newObjLetters.hasOwnProperty(letter)) {
-      newObjLetters[letter] += 1;
-    } else {
-      newObjLetters[letter] = 1;
-    }
-  }
-  return newObjLetters;
-};
+// const searchLettersinForOF = (string) => {
+//   const arrLetters = string.split("");
+//   const newObjLetters = {};
+//   for (const letter of arrLetters) {
+//     if (newObjLetters.hasOwnProperty(letter)) {
+//       newObjLetters[letter] += 1;
+//     } else {
+//       newObjLetters[letter] = 1;
+//     }
+//   }
+//   return newObjLetters;
+// };
 
-console.log(searchLettersinForOF(str1));
+// console.log(searchLettersinForOF(str1));
