@@ -66,18 +66,61 @@ const account = {
   },
 };
 
-function handleSuccess(massage) {
+const handleSuccess = (massage) => {
   console.log(`✅success! ${massage}`);
-}
+};
 
-function handleError(massage) {
+const handleError = (massage) => {
   console.log(`❌Erorr ${massage}`);
-}
+};
 
-account.withdraw(2000, handleSuccess, handleError);
-account.withdraw(900, handleSuccess, handleError);
-account.withdraw(300, handleSuccess, handleError);
+// account.withdraw(2000, handleSuccess, handleError);
+// account.withdraw(900, handleSuccess, handleError);
+// account.withdraw(300, handleSuccess, handleError);
 
-account.deposit(1600, handleSuccess, handleError);
-account.deposit(0, handleSuccess, handleError);
-account.deposit(500, handleSuccess, handleError);
+// account.deposit(1600, handleSuccess, handleError);
+// account.deposit(0, handleSuccess, handleError);
+// account.deposit(500, handleSuccess, handleError);
+
+//#2
+const each = (array, calback) => {
+  for (const item of array) {
+    calback(item);
+  }
+};
+
+const objValue = {
+  valueMultiplication: [],
+  valueSubtraction: [],
+  valueSqrt: [],
+  valueCeil: [],
+  valueFloor: [],
+};
+
+each([64, 49, 36, 25, 16], (value) => {
+  return objValue.valueMultiplication.push(value * 2);
+});
+
+each([64, 49, 36, 25, 16], (value) =>
+  objValue.valueSubtraction.push(value - 2)
+);
+
+each([64, 49, 36, 25, 16], (value) =>
+  objValue.valueSqrt.push(Math.sqrt(value))
+);
+
+each([64, 49, 36, 25, 16], (value) =>
+  objValue.valueCeil.push(Math.ceil(value))
+);
+
+each([64, 49, 36, 25, 16], (value) =>
+  objValue.valueFloor.push(Math.floor(value))
+);
+
+console.log(objValue);
+
+// const array = [1, 4, 6, 7, 9, 3, 76, 6];
+// const arrayPlus = [];
+// array.forEach((item) => arrayPlus.push(item + 1));
+
+// console.log(arrayPlus);
